@@ -13,7 +13,9 @@ export function Header() {
           <div className="flex items-center space-x-3">
             <img className="w-6" src={LogoGitHub} alt="GitHub Explorer Logo" />
             <div className="flex items-center gap-6 text-white">
-              <h1 className="text-3xl font-bold tracking-tight">{t("header.title")}</h1>
+              <h1 className="text-3xl font-bold tracking-tight">
+                {t("header.title")}
+              </h1>
               <span className="text-2xl font-bold">/</span>
               <p className="text-white">{t("header.subtitle")}</p>
             </div>
@@ -25,7 +27,9 @@ export function Header() {
               placeholder={t("header.searchPlaceholder")}
               className="w-64 bg-amber-50"
             />
-            <button className="bg-amber-50 p-2 rounded-md">{t("header.searchButton")}</button>
+            <button className="bg-amber-50 p-2 rounded-md">
+              {t("header.searchButton")}
+            </button>
             <LanguageSelector />
           </div>
         </div>

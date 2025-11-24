@@ -38,13 +38,17 @@ export const RepositoryCard = ({
         {starred && (
           <div className="flex items-center gap-1">
             <Star className="w-4 h-4" />
-            <span>{repo?.stargazers_count} {t("repositories.stars")}</span>
+            <span>
+              {repo?.stargazers_count} {t("repositories.stars")}
+            </span>
           </div>
         )}
 
         <div className="flex items-center gap-1">
           <GitFork className="w-4 h-4" />
-          <span>{repo?.forks} {t("repositories.forks_count")}</span>
+          <span>
+            {repo?.forks} {t("repositories.forks_count")}
+          </span>
         </div>
       </div>
     </div>

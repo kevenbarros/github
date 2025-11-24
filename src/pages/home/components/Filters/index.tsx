@@ -29,7 +29,10 @@ export const FiltersRepositories = () => {
             { value: "owner", label: t("filters.owner") },
             { value: "member", label: t("filters.member") },
             { value: "collaborator", label: t("filters.collaborator") },
-            { value: "organization_member", label: t("filters.organization_member") },
+            {
+              value: "organization_member",
+              label: t("filters.organization_member"),
+            },
           ]}
         />
         <SelectButton

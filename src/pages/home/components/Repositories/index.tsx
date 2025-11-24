@@ -1,5 +1,6 @@
 import { Book, Star } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Tabs } from "@/components/Tabs";
 import type { TabItem } from "@/components/Tabs";
 import { RepositoryCard } from "@/components/RepositoryCard";
@@ -10,11 +11,12 @@ export const Repositories = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentTab = searchParams.get("tab") || "repositories";
   const { repositoryInfo, starredRepositories } = useRepositoryStore();
+  const { t } = useTranslation();
 
   const tabs: TabItem[] = [
     {
       id: "repositories",
-      label: "Repositories",
+      label: t("repositories.title"),
       count: repositoryInfo?.length ?? 0,
       icon: <Book className="w-4 h-4" />,
       content: (
@@ -28,7 +30,7 @@ export const Repositories = () => {
     },
     {
       id: "starred",
-      label: "Starred",
+      label: t("repositories.starred"),
       count: starredRepositories?.length ?? 0,
       icon: <Star className="w-4 h-4" />,
       content: (

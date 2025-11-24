@@ -29,10 +29,13 @@ interface SelectOption {
 }
 
 interface SelectButtonProps {
-  label: string;
+  label?: string;
   options?: SelectOption[];
   urlParam?: string;
   className?: string;
+  placeholder?: string;
+  selectedValue?: string;
+  onChange?: (value: string) => void;
 }
 
 export const SelectButton = ({
@@ -40,10 +43,74 @@ export const SelectButton = ({
   options = [],
   urlParam = "filters",
   className = "",
+  placeholder,
+  selectedValue,
+  onChange,
 }: SelectButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const isMobile = useIsMobile();
+
+  if (onChange && selectedValue !== undefined) {
+    const handleSingleSelect = (optionValue: string) => {
+      onChange(optionValue);
+      setIsOpen(false);
+    };
+
+    const displayLabel = selectedValue || placeholder || label || "";
+
+    const triggerButton = (
+      <button
+        className={`
+          inline-flex items-center gap-2 px-4 py-2 rounded-full text-white font-medium text-sm
+          bg-linear-to-r from-[#0056A6] to-[#0587FF]
+          hover:from-[#004892] hover:to-[#0470E6]
+          focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+          transition-all duration-200 ease-in-out
+          shadow-sm hover:shadow-md
+          ${className}
+        `}
+      >
+        <span>{displayLabel}</span>
+        <ChevronDown className="w-4 h-4" />
+      </button>
+    );
+
+    const optionsList = (
+      <div className="space-y-2">
+        {options.map((option) => (
+          <button
+            key={option.value}
+            onClick={() => handleSingleSelect(option.value)}
+            className="flex items-center gap-3 p-3 w-full rounded-lg cursor-pointer transition-colors hover:bg-gray-50 text-left"
+          >
+            <span className="text-sm font-medium text-gray-900">
+              {option.label}
+            </span>
+          </button>
+        ))}
+      </div>
+    );
+
+    return (
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogTrigger asChild>{triggerButton}</DialogTrigger>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>{placeholder || label}</DialogTitle>
+          </DialogHeader>
+          <div className="py-4">{optionsList}</div>
+          <DialogFooter>
+            <DialogClose asChild>
+              <button className="w-full px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                Cancel
+              </button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    );
+  }
 
   const selectedValues =
     searchParams.get(urlParam)?.split(",").filter(Boolean) || [];

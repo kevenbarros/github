@@ -1,0 +1,76 @@
+{
+  "header": {
+    "title": "GitHub",
+    "subtitle": "Profile",
+    "searchPlaceholder": "Search user...",
+    "searchButton": "Search",
+    "languageSelector": "Language"
+  },
+  "profile": {
+    "followers": "followers",
+    "following": "following",
+    "repositories": "repositories",
+    "gists": "gists",
+    "stars": "stars",
+    "loading": "Loading profile...",
+    "notFound": "User not found",
+    "joinedOn": "Joined on",
+    "location": "Location",
+    "company": "Company",
+    "website": "Website",
+    "email": "Email",
+    "bio": "Bio"
+  },
+  "repositories": {
+    "title": "Repositories",
+    "searchPlaceholder": "Search repositories...",
+    "noRepositories": "No repositories found",
+    "loading": "Loading repositories...",
+    "starred": "Starred",
+    "all": "All",
+    "forks": "Forks",
+    "language": "Language",
+    "type": "Type",
+    "filters": "Filters",
+    "stars": "stars",
+    "forks_count": "forks",
+    "updatedOn": "Updated on"
+  },
+  "filters": {
+    "all": "All",
+    "owner": "Owner",
+    "member": "Member",
+    "collaborator": "Collaborator",
+    "organization_member": "Organization Member"
+  },
+  "languages": {
+    "JavaScript": "JavaScript",
+    "TypeScript": "TypeScript",
+    "Python": "Python",
+    "Java": "Java",
+    "C": "C",
+    "C++": "C++",
+    "C#": "C#",
+    "PHP": "PHP",
+    "Ruby": "Ruby",
+    "Go": "Go",
+    "Rust": "Rust",
+    "Swift": "Swift",
+    "Kotlin": "Kotlin",
+    "HTML": "HTML",
+    "CSS": "CSS",
+    "Shell": "Shell",
+    "All": "All"
+  },
+  "common": {
+    "select": "Select",
+    "close": "Close",
+    "open": "Open",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "view": "View"
+  }
+}

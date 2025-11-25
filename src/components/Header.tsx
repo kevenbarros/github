@@ -27,9 +27,6 @@ export function Header() {
               placeholder={t("header.searchPlaceholder")}
               className="w-64 bg-amber-50"
             />
-            <button className="bg-amber-50 p-2 rounded-md">
-              {t("header.searchButton")}
-            </button>
             <LanguageSelector />
           </div>
         </div>

@@ -34,7 +34,10 @@
     "filters": "Filters",
     "stars": "stars",
     "forks_count": "forks",
-    "updatedOn": "Updated on"
+    "updatedOn": "Updated on",
+    "sources": "Sources",
+    "archived": "Archived",
+    "mirrors": "Mirrors"
   },
   "filters": {
     "all": "All",
@@ -72,5 +75,9 @@
     "edit": "Edit",
     "delete": "Delete",
     "view": "View"
+  },
+  "selectButton": {
+    "chooseOption": "Choose an option from the list below.",
+    "selected": "selected"
   }
 }

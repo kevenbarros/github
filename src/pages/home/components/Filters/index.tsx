@@ -25,13 +25,13 @@ export const FiltersRepositories = () => {
           label={t("repositories.type")}
           urlParam="type"
           options={[
-            { value: "all", label: t("filters.all") },
-            { value: "owner", label: t("filters.owner") },
-            { value: "member", label: t("filters.member") },
-            { value: "collaborator", label: t("filters.collaborator") },
+            { value: "all", label: t("repositories.all") },
+            { value: "forks", label: t("repositories.forks") },
+            { value: "sources", label: t("repositories.sources") },
+            { value: "archived", label: t("repositories.archived") },
             {
-              value: "organization_member",
-              label: t("filters.organization_member"),
+              value: "mirrors",
+              label: t("repositories.mirrors"),
             },
           ]}
         />

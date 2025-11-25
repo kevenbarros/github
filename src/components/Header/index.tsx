@@ -1,7 +1,7 @@
 import LogoGitHub from "@/assets/logoGithub.svg";
-import { Input } from "./ui/input";
-import { LanguageSelector } from "./LanguageSelector";
+import { Input } from "../ui/input";
 import { useTranslation } from "react-i18next";
+import { LanguageSelector } from "../LanguageSelector";
 
 export function Header() {
   const { t } = useTranslation();

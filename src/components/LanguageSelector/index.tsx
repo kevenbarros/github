@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { SelectButton } from "./SelectButton";
 import { Globe } from "lucide-react";
+import { SelectButton } from "../SelectButton";
 
 const languages = [
   { value: "pt", label: "Português" },

@@ -16,10 +16,10 @@ export const Home = () => {
   const [searchParams] = useSearchParams();
   const user = searchParams.get("searchUser");
   const repositorySearch = searchParams.get("searchRepository");
-  const userDebounced = useDebounce(user, 1000) || "kevenbarros";
-  const repositorySearchDebounced = useDebounce(repositorySearch, 1000);
   const type = searchParams.get("type") as RepositoryType;
   const language = searchParams.get("language") as ProgrammingLanguage;
+  const userDebounced = useDebounce(user, 1000) || "kevenbarros";
+  const repositorySearchDebounced = useDebounce(repositorySearch, 1000);
   const { data: profile } = useGetProfile({
     userName: userDebounced,
   });
